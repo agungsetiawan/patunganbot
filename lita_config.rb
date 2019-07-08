@@ -51,6 +51,7 @@ Lita.configure do |config|
   require_relative './handlers/help_handler'
   require_relative './handlers/finish_handler'
   require_relative './handlers/payment_info_handler'
+  require_relative './handlers/note_handler'
   require_relative './models/course'
   require_relative './models/participant'
 end

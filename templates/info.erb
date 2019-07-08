@@ -2,6 +2,11 @@
 <%= "\n" %>
 <%= @course.link %>
 
+<% if @course.note %>
+  <%= "\n" %>
+  <%= @course.note %>
+<% end %>
+
 <% if @course.payment_info %>
   <%= "\n" %>
   ********************
