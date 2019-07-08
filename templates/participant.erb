@@ -1,0 +1,4 @@
+<% @participants.each_with_index do |p, index|  %>
+    <%= "#{index + 1}. #{p.name} - #{p.username} - #{p.paid? ? 'lunas' : 'belum bayar'}" %>
+    <% index = index + 1 %>
+<% end %>

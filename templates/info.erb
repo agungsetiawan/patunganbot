@@ -1,0 +1,11 @@
+<%= @course.name %>
+<%= "\n" %>
+<%= @course.link %>
+
+<% if @course.payment_info %>
+  <%= "\n" %>
+  ********************
+  Informasi Pembayaran
+  ********************
+  <%= @course.payment_info %>
+<% end %>
