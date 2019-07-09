@@ -1,12 +1,12 @@
 module Lita
   module Handlers
-    class PayHandler < Handler
+    class PayHandler < BaseHandler
       route /^\/pay\s+(?<username>@.+)$/, :perform 
 
       def perform(response)
         username = response.match_data[:username]
 
-        participant = Participant.where(username: username, course_id: course_id)
+        participant = Participant.where(username: username, course_id: current_course.id)
 
         if participant
           participant.update(paid: true)
@@ -17,12 +17,6 @@ module Lita
       end
 
       Lita.register_handler self
-
-      private
-
-      def course_id
-        Course.find_by(finish: false).id
-      end
     end
   end
 end

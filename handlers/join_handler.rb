@@ -1,6 +1,6 @@
 module Lita
   module Handlers
-    class JoinHandler < Handler 
+    class JoinHandler < BaseHandler 
       route /^\/join\s+(?<name>[\w\.\s]+)\s+(?<username>@.+)$/, :perform
 
       def perform(response)
@@ -10,7 +10,7 @@ module Lita
         participant = Participant.new(
           name: name,
           username: username,
-          course_id: course_id
+          course_id: current_course.id
         )
 
         if participant.save
@@ -21,12 +21,6 @@ module Lita
       end
 
       Lita.register_handler self
-
-      private
-
-      def course_id
-        Course.find_by(finish: false).id
-      end
     end
   end
 end

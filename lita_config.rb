@@ -43,6 +43,7 @@ Lita.configure do |config|
     password: ''
   )
 
+  require_relative './handlers/base_handler'
   require_relative './handlers/register_handler'
   require_relative './handlers/join_handler'
   require_relative './handlers/participant_handler'
@@ -54,4 +55,5 @@ Lita.configure do |config|
   require_relative './handlers/note_handler'
   require_relative './models/course'
   require_relative './models/participant'
+  require_relative './services/get_current_course'
 end

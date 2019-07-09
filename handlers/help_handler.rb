@@ -1,6 +1,6 @@
 module Lita
   module Handlers
-    class HelpHandler < Handler
+    class HelpHandler < BaseHandler
       template_root File.expand_path("../../templates", __FILE__)
 
       route /^\/help$/, :perform

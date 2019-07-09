@@ -1,6 +1,6 @@
 module Lita
   module Handlers
-    class RegisterHandler < Handler
+    class RegisterHandler < BaseHandler
       route /^\/register\s+(?<name>[\w\s]+)(?<link>http.+)$/, :perform
 
       def perform(response)
